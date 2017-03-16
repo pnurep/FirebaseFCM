@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendNotification(View view){
 
+        final String sender = editId.getText().toString();
         final String msg = editMsg.getText().toString();
         final String token = (String) textToken.getText();
 
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 String server_url = "http://192.168.1.240:8080/";
 
                 //2. post message 세팅
-                String post_data = "to_token=" + token + "&msg="+msg;
+                String post_data = "to_token=" + token + "&msg="+msg + "&sender=" + sender;
 
                 try {
                     //3. HTTPURLConnection을 사용해서 FCM서버측으로 메시지를 전송한다..
